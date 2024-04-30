@@ -9,20 +9,6 @@ const Dashboard = () => {
   const { Auth } = useContext(AuthContext);
   const { fetchData, loading } = useDatafetch();
   const [todo, setTodo] = useState([]);
-  console.log(Auth);
-  const fetchToDo = async () => {
-    setLoading(true);
-    try {
-      const limit = 20;
-      const response = await fetch("");
-      const data = await response.json();
-      setTodo(data);
-    } catch (error) {
-      console.log(error);
-    } finally {
-      setLoading(false);
-    }
-  };
   useEffect(() => {
     fetchData(Auth?.token).then((data) => setTodo(data));
   }, []);

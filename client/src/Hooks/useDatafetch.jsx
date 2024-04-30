@@ -5,13 +5,16 @@ const useDatafetch = () => {
   const fetchData = async (token) => {
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:8080/api/fetch", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `${token}`,
-        },
-      });
+      const res = await fetch(
+        "https://technifyassesment-backend.onrender.com/api/fetch",
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `${token}`,
+          },
+        }
+      );
       const data = await res.json();
       return data;
     } catch (error) {
