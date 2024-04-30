@@ -39,7 +39,6 @@ export const login = async (req, res) => {
 };
 export const signup = async (req, res) => {
   const { username, email, password } = req.body;
-  console.log(email);
 
   try {
     // Check if the email is already registered
