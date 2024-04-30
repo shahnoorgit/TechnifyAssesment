@@ -23,6 +23,7 @@ const Signup = () => {
     setForm({
       username: "",
       password: "",
+      email: "",
     });
   };
   return (
